@@ -3,6 +3,7 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 import { format, formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import { Avatar } from './Avatar';
 
 
 export function Post({ author, publishedAt, content }){
@@ -48,7 +49,10 @@ export function Post({ author, publishedAt, content }){
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img className={styles.avatar} src={author.avatarUrl}/>
+          <Avatar
+            src="https://github.com/NailsonCodens.png"
+            hasBorder
+          />          
           <div className={styles.authorInfo}>
             <strong>{author.name}</strong>
             <span>{author.role}</span>
